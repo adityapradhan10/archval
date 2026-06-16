@@ -1,0 +1,20 @@
+{
+  "name": "@archval/prettier-config",
+  "private": true,
+  "type": "module",
+  "main": "index.mjs",
+  "exports": {
+    ".": "./index.mjs"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@archval/ts-config": "workspace:*",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  },
+  "peerDependencies": {
+    "prettier": "^3.0.0"
+  }
+}

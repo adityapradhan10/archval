@@ -1,0 +1,35 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+.next
+out
+build
+
+# Turborepo
+.turbo
+
+# Test / coverage
+coverage
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+*.log
+pnpm-debug.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.idea
+.vscode/*
+!.vscode/settings.json

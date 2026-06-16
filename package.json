@@ -1,0 +1,30 @@
+{
+  "name": "archval",
+  "private": true,
+  "packageManager": "pnpm@9.15.4",
+  "description": "Frontend architecture audit tool",
+  "type": "module",
+  "prettier": "@archval/prettier-config",
+  "scripts": {
+    "build": "turbo run build",
+    "typecheck": "turbo run build --filter=@archval/eslint-config && tsc --noEmit -p tsconfig.json && turbo run typecheck",
+    "lint": "turbo run build --filter=@archval/eslint-config && eslint .",
+    "lint:fix": "turbo run build --filter=@archval/eslint-config && eslint . --fix",
+    "format": "prettier . --write",
+    "format:check": "prettier . --check"
+  },
+  "devDependencies": {
+    "@archval/eslint-config": "workspace:*",
+    "@archval/prettier-config": "workspace:*",
+    "@archval/ts-config": "workspace:*",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT"
+}

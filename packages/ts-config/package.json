@@ -1,0 +1,15 @@
+{
+  "name": "@archval/ts-config",
+  "private": true,
+  "files": [
+    "base.json",
+    "config-package.json"
+  ],
+  "exports": {
+    "./base.json": "./base.json",
+    "./config-package.json": "./config-package.json"
+  },
+  "scripts": {
+    "typecheck": "node scripts/validate-configs.mjs"
+  }
+}

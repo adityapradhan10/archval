@@ -1,0 +1,4 @@
+{
+  "extends": "@archval/ts-config/config-package.json",
+  "include": ["eslint.config.ts"]
+}
