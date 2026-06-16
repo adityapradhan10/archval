@@ -1,8 +1,8 @@
 {
-  "name": "archval",
+  "name": "@archval/monorepo",
   "private": true,
   "packageManager": "pnpm@9.15.4",
-  "description": "Frontend architecture audit tool",
+  "description": "Static frontend architecture analysis tool",
   "type": "module",
   "prettier": "@archval/prettier-config",
   "scripts": {
@@ -11,12 +11,15 @@
     "lint": "turbo run build --filter=@archval/eslint-config && eslint .",
     "lint:fix": "turbo run build --filter=@archval/eslint-config && eslint . --fix",
     "format": "prettier . --write",
-    "format:check": "prettier . --check"
+    "format:check": "prettier . --check",
+    "test": "turbo run test",
+    "archval": "archval"
   },
   "devDependencies": {
     "@archval/eslint-config": "workspace:*",
     "@archval/prettier-config": "workspace:*",
     "@archval/ts-config": "workspace:*",
+    "archval": "workspace:*",
     "@types/node": "catalog:",
     "eslint": "catalog:",
     "prettier": "catalog:",

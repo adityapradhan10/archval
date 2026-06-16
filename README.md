@@ -12,9 +12,26 @@ Frontend architecture audit tool — monorepo scaffold.
 ```
 apps/          # Future applications (web, docs) — none yet
 packages/
+  core/        # Publishable `archval` CLI and engine (`npx archval`)
   eslint-config/
   prettier-config/
   ts-config/
+```
+
+## CLI
+
+The `archval` package in `packages/core` is published as [`archval`](https://www.npmjs.com/package/archval) and exposes the `archval` bin:
+
+```bash
+npx archval audit
+npx archval --version
+```
+
+During local development:
+
+```bash
+pnpm build
+pnpm archval audit
 ```
 
 ## Scripts
@@ -23,6 +40,8 @@ packages/
 | ------------------- | ----------------------------------- |
 | `pnpm install`      | Install dependencies                |
 | `pnpm build`        | Build packages (e.g. eslint-config) |
+| `pnpm test`         | Run package tests                   |
+| `pnpm archval`      | Run the local CLI                   |
 | `pnpm lint`         | ESLint across the repo              |
 | `pnpm lint:fix`     | Auto-fix ESLint issues              |
 | `pnpm typecheck`    | TypeScript checks (root + packages) |

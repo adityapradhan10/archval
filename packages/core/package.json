@@ -1,0 +1,61 @@
+{
+  "name": "archval",
+  "version": "0.1.0",
+  "description": "CLI and core engine for static frontend architecture analysis",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./reporters": {
+      "types": "./dist/reporters/index.d.ts",
+      "import": "./dist/reporters/index.js"
+    },
+    "./sdk": {
+      "types": "./dist/sdk/index.d.ts",
+      "import": "./dist/sdk/index.js"
+    }
+  },
+  "bin": {
+    "archval": "./bin/archval.js"
+  },
+  "files": [
+    "bin",
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "prepare": "pnpm run build",
+    "test": "node --import tsx --test test/**/*.test.ts",
+    "lint": "eslint . && tsc --noEmit --project tsconfig.json && tsc --noEmit --project tsconfig.spec.json && tsc --noEmit --project tsconfig.eslint.json",
+    "typecheck": "tsc --noEmit",
+    "audit:self": "node ./bin/archval.js audit --json",
+    "dev": "tsc -p tsconfig.json --watch"
+  },
+  "keywords": [
+    "architecture",
+    "frontend",
+    "lint",
+    "cli"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adityapradhan10/archval.git",
+    "directory": "packages/core"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@archval/eslint-config": "workspace:*",
+    "@archval/ts-config": "workspace:*",
+    "@types/node": "catalog:",
+    "eslint": "catalog:",
+    "tsx": "^4.19.4",
+    "typescript": "catalog:"
+  }
+}

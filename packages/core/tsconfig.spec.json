@@ -1,0 +1,7 @@
+{
+  "extends": "@archval/ts-config/config-package.json",
+  "include": ["test/**/*.ts"],
+  "compilerOptions": {
+    "types": ["node"]
+  }
+}
